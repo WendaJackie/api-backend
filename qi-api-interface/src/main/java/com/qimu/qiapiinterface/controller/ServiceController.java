@@ -21,10 +21,7 @@ import static com.qimu.qiapiinterface.utils.ResponseUtils.responseToMap;
 
 
 /**
- * @Author: QiMu
- * @Date: 2023年08月16日 11:29
- * @Version: 1.0
- * @Description:
+ * 接口服务
  */
 @RestController
 @RequestMapping("/")
@@ -36,7 +33,7 @@ public class ServiceController {
 
     @GetMapping("/loveTalk")
     public String randomLoveTalk() {
-        return get("https://api.vvhan.com/api/love");
+        return get("https://api.vvhan.com/api/text/love");
     }
 
     @GetMapping("/poisonousChickenSoup")
@@ -71,7 +68,7 @@ public class ServiceController {
 
     @GetMapping("/ipInfo")
     public ResultResponse getIpInfo(IpInfoParams ipInfoParams) {
-        return baseResponse("https://api.vvhan.com/api/getIpInfo", ipInfoParams);
+        return baseResponse("https://api.vvhan.com/api/ipInfo", ipInfoParams);
     }
 
     @GetMapping("/weather")

@@ -4,10 +4,7 @@ package com.qimu.qiapicommon.service.inner;
 import com.qimu.qiapicommon.model.entity.InterfaceInfo;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/15 09:32:11
- * @Version: 1.0
- * @Description: 接口信息服务
+ * 接口信息服务
  */
 public interface InnerInterfaceInfoService {
     /**

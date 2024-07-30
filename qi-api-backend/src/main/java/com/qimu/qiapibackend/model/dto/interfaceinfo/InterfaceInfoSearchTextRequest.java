@@ -7,10 +7,7 @@ import lombok.EqualsAndHashCode;
 import java.io.Serializable;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/04 11:33:35
- * @Version: 1.0
- * @Description: 界面信息搜索文本请求
+ * 界面信息搜索文本请求
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

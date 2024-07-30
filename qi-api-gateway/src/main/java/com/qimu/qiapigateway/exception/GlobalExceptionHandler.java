@@ -20,10 +20,7 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/10 09:35:08
- * @Version: 1.0
- * @Description: 错误web异常处理程序
+ *  错误web异常处理程序
  */
 @Configuration
 @Slf4j

@@ -7,7 +7,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
 /**
- * @author qimu
+ * RedisTemplate配置类
  */
 @Configuration
 public class RedisTemplateConfig {

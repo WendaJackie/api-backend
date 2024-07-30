@@ -8,10 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023年08月25日 22:22
- * @Version: 1.0
- * @Description:
+ * 订单服务
  */
 public interface OrderService {
     /**

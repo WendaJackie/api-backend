@@ -30,10 +30,7 @@ import static com.qimu.qiapibackend.model.enums.PayTypeStatusEnum.ALIPAY;
 import static com.qimu.qiapibackend.model.enums.PayTypeStatusEnum.WX;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/25 06:22:02
- * @Version: 1.0
- * @Description: 订单服务
+ * 订单服务
  */
 @Slf4j
 @Service

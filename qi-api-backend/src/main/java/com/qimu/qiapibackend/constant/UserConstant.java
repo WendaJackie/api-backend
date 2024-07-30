@@ -2,8 +2,6 @@ package com.qimu.qiapibackend.constant;
 
 /**
  * 用户常量
- *
- * @author qimu
  */
 public interface UserConstant {
 
@@ -34,6 +32,7 @@ public interface UserConstant {
      * 盐值，混淆密码
      */
     String SALT = "qimu";
+
     /**
      * ak/sk 混淆
      */

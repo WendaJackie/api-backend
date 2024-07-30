@@ -5,10 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/26 01:49:51
- * @Version: 1.0
- * @Description: ali支付异步响应
+ * ali支付异步响应
  */
 @Data
 public class AliPayAsyncResponse implements Serializable {

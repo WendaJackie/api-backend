@@ -10,10 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/11 11:26:46
- * @Version: 1.0
- * @Description: 充值活动服务impl
+ * 充值活动服务impl
  */
 @Service
 public class RechargeActivityServiceImpl extends ServiceImpl<RechargeActivityMapper, RechargeActivity>

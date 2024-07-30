@@ -19,6 +19,7 @@
         <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
         <junit.version>4.13.2</junit.version>
         <EasyWeb.version>0.0.5</EasyWeb.version>
+        <!-- sdk 0.0.3是上线版本，用的gateway.qimu.icu当网关，sdk 0.0.4是本地测试版本 -->
         <qi-api-sdk.version>0.0.3</qi-api-sdk.version>
         <hutool-all.version>5.8.16</hutool-all.version>
         <redisson.version>3.17.5</redisson.version>
@@ -28,6 +29,10 @@
         <dubbo.version>3.0.9</dubbo.version>
         <qi-api-common.version>0.0.1</qi-api-common.version>
         <nacos-client.version>2.1.0</nacos-client.version>
+        <!-- 修复JDK 1.5 的BUG -->
+        <!-- 定义Java版本 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <modules>
@@ -143,6 +148,18 @@
                         </execution>
                     </executions>
                 </plugin>
+                
+                <!-- 修复JDK 1.5 的BUG -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version> <!-- 使用合适的插件版本 -->
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>

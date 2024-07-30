@@ -11,14 +11,17 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
+
 /**
- * @Author: QiMu
- * @Date: 2023/09/08 08:52:13
- * @Version: 1.0
- * @Description: 接口信息服务impl
+ * 接口信息服务impl
  */
 @Service
 public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, InterfaceInfo> implements InterfaceInfoService {
+    @Resource
+    private InterfaceInfoMapper interfaceInfoMapper;
+
     @Override
     public void validInterfaceInfo(InterfaceInfo interfaceInfo, boolean add) {
         if (interfaceInfo == null) {
@@ -60,7 +63,6 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         }
     }
 
-
     @Override
     public boolean updateTotalInvokes(long interfaceId) {
         LambdaUpdateWrapper<InterfaceInfo> invokeLambdaUpdateWrapper = new LambdaUpdateWrapper<>();
@@ -68,6 +70,12 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         invokeLambdaUpdateWrapper.setSql("totalInvokes = totalInvokes + 1");
         return this.update(invokeLambdaUpdateWrapper);
     }
+
+    @Override
+    public List<InterfaceInfo> getTopThreeInvokedInterfaces() {
+        return interfaceInfoMapper.getTopThreeInvokedInterfaces();
+    }
+
 }
 
 

@@ -8,10 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023年08月21日 18:54
- * @Version: 1.0
- * @Description:
+ * 接口视图Vo
  */
 @Data
 public class InterfaceInfoVo implements Serializable {

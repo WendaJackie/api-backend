@@ -13,10 +13,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * @Author: QiMu
- * @Date: 2023/12/19 07:34:18
- * @Version: 1.0
- * @Description: 缓存主体网关筛选器
+ * 缓存主体网关筛选器
  */
 @Component
 public class CacheBodyGatewayFilter implements Ordered, GlobalFilter {

@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.qimu.qiapibackend.common.ErrorCode;
+import com.qimu.qiapibackend.common.*;
 import com.qimu.qiapibackend.exception.BusinessException;
 import com.qimu.qiapibackend.mapper.UserMapper;
 import com.qimu.qiapibackend.model.dto.user.*;
@@ -14,11 +14,14 @@ import com.qimu.qiapibackend.model.entity.User;
 import com.qimu.qiapibackend.model.enums.UserAccountStatusEnum;
 import com.qimu.qiapibackend.model.vo.UserVO;
 import com.qimu.qiapibackend.service.UserService;
+import com.qimu.qiapibackend.to.SmsTo;
 import com.qimu.qiapibackend.utils.RedissonLockUtil;
+import com.qimu.qiapicommon.common.AuthPhoneNumber;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,8 +39,6 @@ import static com.qimu.qiapibackend.constant.UserConstant.*;
 
 /**
  * 用户服务实现类
- *
- * @author qimu
  */
 @Service
 @Slf4j
@@ -51,6 +52,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Resource
     private RedissonLockUtil redissonLockUtil;
+
+    @Autowired
+    private SmsLimiter smsLimiter;
+
+    @Autowired
+    private RabbitUtils rabbitUtils;
 
     /**
      * 用户寄存器
@@ -232,7 +239,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if (userPassword.length() < 8) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "用户密码过短,不能低于8位字符");
         }
-        //  5. 账户不包含特殊字符
+        // 账户不包含特殊字符
         // 匹配由数字、小写字母、大写字母组成的字符串,且字符串的长度至少为1个字符
         String pattern = "[0-9a-zA-Z]+";
         if (!userAccount.matches(pattern)) {
@@ -551,8 +558,39 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         return sb.toString();
     }
+
+    /**
+     * 发送手机短信验证码
+     * @param mobile
+     * @return
+     */
+    @Override
+    public BaseResponse captcha(String mobile) {
+        if (mobile == null ){
+            return ResultUtils.error(ErrorCode.PARAMS_ERROR);
+        }
+        AuthPhoneNumber authPhoneNumber = new AuthPhoneNumber();
+        //验证手机号的合法性
+        if(!authPhoneNumber.isPhoneNum(mobile.toString())){
+            throw new BusinessException(ErrorCode.OPERATION_ERROR, "手机号非法");
+        }
+        int code = (int)((Math.random() * 9 + 1) * 10000);
+        // 使用redis来存储手机号和验证码 ，同时使用令牌桶算法来实现流量控制
+        boolean sendSmsAuth = smsLimiter.sendSmsAuth(mobile, String.valueOf(code));
+        if(!sendSmsAuth){
+            throw new BusinessException(ErrorCode.OPERATION_ERROR, "发送频率过高，请稍后再试");
+        }
+        SmsTo smsTo = new SmsTo(mobile,String.valueOf(code));
+        try {
+            //实际发送短信的功能交给第三方服务去实现
+            rabbitUtils.sendSms(smsTo);
+        }catch (Exception e){
+            //发送失败，删除令牌桶
+            redisTemplate.delete("sms:"+mobile+"_last_refill_time");
+            redisTemplate.delete("sms:"+mobile+"_tokens");
+            throw new BusinessException(ErrorCode.OPERATION_ERROR,"发送验证码失败，请稍后再试");
+        }
+        log.info("发送验证码成功---->手机号为{}，验证码为{}",mobile,code);
+        return ResultUtils.success("发送成功");
+    }
 }
-
-
-
-

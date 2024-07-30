@@ -8,10 +8,7 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.domain.AlipayTradeRefundModel;
 import com.alipay.api.response.AlipayTradeRefundResponse;
 import com.github.binarywang.wxpay.bean.request.WxPayRefundV3Request;
-import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request;
-import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request.Amount;
 import com.github.binarywang.wxpay.bean.result.WxPayRefundV3Result;
-import com.github.binarywang.wxpay.bean.result.enums.TradeTypeEnum;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -36,8 +33,6 @@ import java.util.Map;
 
 /**
  * 用户服务测试
- *
- * @author qimu
  */
 @SpringBootTest
 class UserServiceTest {

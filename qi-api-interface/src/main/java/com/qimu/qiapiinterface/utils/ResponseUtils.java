@@ -12,10 +12,7 @@ import static com.qimu.qiapiinterface.utils.RequestUtils.get;
 
 
 /**
- * @Author: QiMu
- * @Date: 2023年09月22日 17:18
- * @Version: 1.0
- * @Description:
+ * 响应工具类
  */
 public class ResponseUtils {
     public static Map<String, Object> responseToMap(String response) {

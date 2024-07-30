@@ -1,10 +1,7 @@
 package com.qimu.qiapibackend.constant;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/24 11:37:12
- * @Version: 1.0
- * @Description: 支付常数
+ * 支付常数
  */
 public interface PayConstant {
     /**

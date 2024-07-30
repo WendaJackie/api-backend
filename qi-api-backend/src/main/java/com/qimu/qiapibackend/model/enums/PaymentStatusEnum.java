@@ -29,7 +29,6 @@ public enum PaymentStatusEnum {
      * 已关闭
      */
     CLOSED("已关闭", "CLOSED"),
-
     /**
      * 未支付
      */

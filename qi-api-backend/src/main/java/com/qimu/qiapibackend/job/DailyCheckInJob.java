@@ -12,10 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/31 12:10:58
- * @Version: 1.0
- * @Description: 签到任务
+ * 签到任务
  */
 @Component
 public class DailyCheckInJob {

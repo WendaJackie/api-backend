@@ -12,10 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/12 03:17:03
- * @Version: 1.0
- * @Description: knife4j bean配置
+ * knife4j bean配置
  */
 @Configuration
 @EnableSwagger2

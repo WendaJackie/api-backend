@@ -8,10 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/04 11:33:30
- * @Version: 1.0
- * @Description: 查询请求
+ * 接口信息查询请求
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

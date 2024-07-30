@@ -14,16 +14,18 @@ import org.springframework.beans.BeanUtils;
 import javax.annotation.Resource;
 
 /**
- * @Author: QiMu
- * @Date: 2023年09月15日 22:54
- * @Version: 1.0
- * @Description:
+ * 内部用户服务类
  */
 @DubboService
 public class InnerUserServiceImpl implements InnerUserService {
     @Resource
     private UserService userService;
 
+    /**
+     * 根据访问密钥获取用户信息
+     * @param accessKey 访问密钥
+     * @return UserVO
+     */
     @Override
     public UserVO getInvokeUserByAccessKey(String accessKey) {
         if (StringUtils.isAnyBlank(accessKey)) {

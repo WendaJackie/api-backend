@@ -16,10 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/04 11:30:02
- * @Version: 1.0
- * @Description: 用户界面调用服务impl
+ * 用户界面调用服务impl
  */
 @DubboService
 public class UserInterfaceInvokeServiceImpl extends ServiceImpl<UserInterfaceInvokeMapper, UserInterfaceInvoke>
@@ -29,6 +26,13 @@ public class UserInterfaceInvokeServiceImpl extends ServiceImpl<UserInterfaceInv
     @Resource
     private UserService userService;
 
+    /**
+     * 用户接口调用记录和积分扣除
+     * @param interfaceInfoId 接口信息id
+     * @param userId          用户id
+     * @param reduceScore     降低分数
+     * @return boolean
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean invoke(Long interfaceInfoId, Long userId, Integer reduceScore) {

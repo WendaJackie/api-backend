@@ -21,10 +21,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/31 11:51:14
- * @Version: 1.0
- * @Description: 签到接口
+ * 签到接口
  */
 @RestController
 @RequestMapping("/dailyCheckIn")

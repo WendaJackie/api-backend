@@ -4,10 +4,7 @@ import com.qimu.qiapicommon.model.entity.InterfaceInfo;
 import com.qimu.qiapicommon.model.vo.UserVO;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/04 11:29:54
- * @Version: 1.0
- * @Description: 用户界面调用服务
+ * 用户界面调用服务
  */
 public interface InnerUserInterfaceInvokeService {
 

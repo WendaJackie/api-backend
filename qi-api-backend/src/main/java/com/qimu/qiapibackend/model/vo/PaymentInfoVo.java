@@ -8,10 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023年08月24日 10:33
- * @Version: 1.0
- * @Description:
+ * 支付信息Vo
  */
 @Data
 @NoArgsConstructor

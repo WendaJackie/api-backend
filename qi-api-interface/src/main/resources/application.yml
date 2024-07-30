@@ -11,6 +11,8 @@ spring:
 qi:
   api:
     client:
-      access-key: 7052a8594339a519e0ba5eb04a267a60
-      secret-key: d8d6df60ab209385a09ac796f1dfe3e1
+#      access-key: 7052a8594339a519e0ba5eb04a267a60
+#      secret-key: d8d6df60ab209385a09ac796f1dfe3e1
+      access-key: d727b8105c357c289d9088052a5fcd91
+      secret-key: 72c33a89f6b950f80a143c5b879231ed
 

@@ -1,66 +1,36 @@
-<p align="center">
-    <img src=https://img.qimuu.icu/typory/logo.gif width=188/>
-</p>
-<h1 align="center">Qi-API 接口开放平台</h1>
-<p align="center"><strong>Qi-API 接口开放平台是一个为用户和开发者提供全面API接口调用服务的平台 🛠</strong></p>
-<div align="center">
-<a target="_blank" href="https://github.com/qimu666/qi-api">
-    <img alt="" src="https://github.com/qimu666/qi-api/badge/star.svg?theme=gvp"/>
-</a>
-<a target="_blank" href="https://github.com/qimu666/qi-api">
-    <img alt="" src="https://img.shields.io/github/stars/qimu666/qi-api.svg?style=social&label=Stars"/>
-</a>
-    <img alt="Maven" src="https://raster.shields.io/badge/Maven-3.8.1-red.svg"/>
-<a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
-        <img alt="" src="https://img.shields.io/badge/JDK-1.8+-green.svg"/>
-</a>
-    <img alt="SpringBoot" src="https://raster.shields.io/badge/SpringBoot-2.7+-green.svg"/>
-<a href="https://github.com/qimu666/qi-api" target="_blank">
-    <img src='https://img.shields.io/github/forks/qimu666/qi-api' alt='GitHub forks' class="no-zoom">
-</a>
-<a href="https://github.com/qimu666/qi-api" target="_blank"><img src='https://img.shields.io/github/stars/qimu666/qi-api' alt='GitHub stars' class="no-zoom">
-</a>
-</div>
+# API接口开放平台
 
 ## 项目介绍 🙋
 
-
-
 **😀 作为用户您可以通过注册登录账户，获取接口调用权限，并根据自己的需求浏览和选择适合的接口。您可以在线进行接口调试，快速验证接口的功能和效果。** 
 
-**💻 作为开发者 我们提供了[客户端SDK: Qi-API-SDK](https://github.com/qimu666/qi-api-sdk)， 通过[开发者凭证](https://api.qimuu.icu/account/center)即可将轻松集成接口到您的项目中，实现更高效的开发和调用。** 
+**💻 作为开发者 我们提供了客户端SDK: API-SDK， 通过开发者凭证即可将轻松集成接口到您的项目中，实现更高效的开发和调用。** 
 
-**🤝 您可以将自己的接口接入到Qi-API 接口开放平台平台上，并发布给其他用户使用。 您可以管理和各个接口，以便更好地分析和优化接口性能。** 
+**🤝 您可以将自己的接口接入到 API 接口开放平台平台上，并发布给其他用户使用。 您可以管理和各个接口，以便更好地分析和优化接口性能。** 
 
-**👌 我们还提供了[开发者在线文档](https://doc.qimuu.icu/)和技术支持，帮助您快速接入和发布接口。**
+**👌 我们还提供了开发者在线文档和技术支持，帮助您快速接入和发布接口。**
 
- **🏁 无论您是用户还是开发者，Qi-API 接口开放平台都致力于提供稳定、安全、高效的接口调用服务，帮助您实现更快速、便捷的开发和调用体验。**
+ **🏁 无论您是用户还是开发者，API 接口开放平台都致力于提供稳定、安全、高效的接口调用服务，帮助您实现更快速、便捷的开发和调用体验。**
 
 ## 网站导航 🧭
 
-- [**Qi-API 后端 🏘️**](https://github.com/qimu666/qi-api)
-- [**Qi-API 前端 🏘**️](https://github.com/qimu666/qi-api-frontend)
-
--  **[Qi-API-SDK](https://github.com/qimu666/qi-api-sdk)** 🛠
-
--  **[Qi-API 接口开放平台 🔗](https://api.qimuu.icu/)**
-
--  **[Qi-API-DOC 开发者文档 📖](https://doc.qimuu.icu/)**
--  **[Qi-API-SDK-demo ✔️](https://github.com/qimu666/qi-api-sdk-demo/blob/master/src/main/java/icu/qimuu/qiapisdkdemo/controller/InvokeController.java)**
+- **API 后端 🏘️**
+- **API 前端 🏘**️
+- **API-SDK** 🛠
+- **API 接口开放平台 🔗**
+-  **API-SDK-demo ✔️**
 
 
 ## 目录结构 📑
 
 
-| 目录                                                     | 描述               |
-|--------------------------------------------------------| ------------------ |
-| **🏘️ [qi-api-backend](./qi-api-backend)**             | Qi-API后端服务模块 |
-| **🏘️ [qi-api-common](./qi-api-common)**               | 公共服务模块       |
-| **🕸️ [qi-api-gateway](./qi-api-gateway)**             | 网关模块           |
-| **🔗 [qi-api-interface](./qi-api-interface)**          | 接口模块           |
-| **🛠 [qi-qpi-sdk](https://github.com/qimu666/qi-api-sdk)** | 开发者调用sdk      |
-| **📘 [qi-api-doc](https://doc.qimuu.icu/)**            | 接口在线文档       |
-| **✔️ [Qi-API-SDK-Demo](https://github.com/qimu666/qi-api-sdk-demo/blob/master/src/main/java/icu/qimuu/qiapisdkdemo/controller/InvokeController.java)** | sdk调用Demo |
+| 目录                | 描述            |
+| ------------------- | --------------- |
+| **🏘️ api-backend**   | API后端服务模块 |
+| **🏘️ api-common**    | 公共服务模块    |
+| **🕸️ api-gateway**   | 网关模块        |
+| **🔗 api-interface** | 接口模块        |
+| **🛠 pi-sdk**        | 开发者调用sdk   |
 
 ## 项目流程 🗺️
 
@@ -135,8 +105,7 @@ yarn build or npm run build
 
 |                          **功能**                           | 游客 | **普通用户** | **管理员** |
 | ----------------------------------------------------- |--------------|-----|-----|
-| [**Qi-API-SDK**](https://github.com/qimu666/qi-api-sdk)使用 | ✅ | ✅ |     ✅      |
-|        **[开发者API在线文档](http://doc.qimuu.icu)**        | ✅ | ✅ |     ✅      |
+| **API-SDK**使用 | ✅ | ✅ |     ✅      |
 |                     邀请好友注册得坤币                      | ❌ | ✅ |     ✅      |
 |                    切换主题、深色、暗色                     | ✅ | ✅ | ✅ |
 |                       微信支付宝付款                        | ❌ | ✅ | ✅ |
@@ -158,78 +127,94 @@ yarn build or npm run build
 
 ### 首页
 
-![index](https://img.qimuu.icu/typory/index.png)
+![image-20240617010707902](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617010707902.png)
+
+### 登录/注册
+
+![image-20240617012241813](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617012241813.png)
+
+![image-20240617012302010](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617012302010.png)
 
 ### 接口广场
 
-![interfaceSquare](https://img.qimuu.icu/typory/interfaceSquare.png)
-
-### 开发者在线文档
-
-![api](https://img.qimuu.icu/typory/api.png)
-
-![api2](https://img.qimuu.icu/typory/api2.png)
+![image-20240617010812880](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617010812880.png)
 
 ### 接口描述
 
-#### **在线API**
+#### 在线API
 
-![interfaceinfo-api](https://img.qimuu.icu/typory/interfaceinfo-api.png)
+![image-20240617011002137](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011002137.png)
 
-#### 在线调试工具![interfaceinfo-tools](https://img.qimuu.icu/typory/interfaceinfo-tools.png)
+#### 在线调试工具
 
-#### **错误码参考**![interfaceinfo-errorcode](https://img.qimuu.icu/typory/interfaceinfo-errorcode.png)
+![image-20240617011056657](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011056657.png)
 
-#### **接口调用代码示例**![interfaceinfo-sampleCode](https://img.qimuu.icu/typory/interfaceinfo-sampleCode.png)
+#### 错误码参考
+
+![image-20240617011126377](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011126377.png)
+
+#### 接口调用代码示例
+
+![image-20240617011214820](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011214820.png)
 
 ### 管理页
 
 #### 用户管理
 
-![admin-userManagement](https://img.qimuu.icu/typory/admin-userManagement.png)
+![image-20240617011303388](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011303388.png)
 
-#### 商品管理![admin-productManagement](https://img.qimuu.icu/typory/admin-productManagement.png)
+#### 商品管理
 
-#### 接口管理![admin-interfaceManagement](https://img.qimuu.icu/typory/admin-interfaceManagement.png)
+![image-20240617011332022](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011332022.png)
 
-#### 动态更新请求响应参数![dynamicRequestParameters](https://img.qimuu.icu/typory/dynamicRequestParameters.png)
+#### 接口管理
 
+![image-20240617011410435](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011410435.png)
+
+#### 动态更新响应请求参数
+
+![image-20240617011446747](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011446747.png)
 
 ### 积分商城
 
-![pointPurchase](https://img.qimuu.icu/typory/pointPurchase.png)
+![image-20240617011524440](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011524440.png)
 
-### 订单支付![pay](https://img.qimuu.icu/typory/pay.png)
+### 订单支付
+
+![image-20240617011555511](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011555511.png)
 
 ### 个人信息
 
 #### 信息展示
 
-![userinfo](https://img.qimuu.icu/typory/userinfo.png)
+![image-20240617011626549](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011626549.png)
 
 #### 每日签到
 
-##### 签到成功![successfullySignedIn](https://img.qimuu.icu/typory/successfullySignedIn.png)
+#### 签到成功
 
-##### 签到失败![errorfullySignedIn](https://img.qimuu.icu/typory/errorfullySignedIn.png)
+![image-20240617011855413](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011855413.png)
 
-### 好友邀请
+#### 签到失败
 
-#### **发送邀请**![Invitefriends](https://img.qimuu.icu/typory/Invitefriends.png)
-
-#### **接收邀请**![registerThroughInvitationCode](https://img.qimuu.icu/typory/registerThroughInvitationCode.png)
-
-### 登录/注册![login](https://img.qimuu.icu/typory/login.png)
-
-![register](https://img.qimuu.icu/typory/register.png)
+![image-20240617011914647](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617011914647.png)
 
 ### 订单管理
 
-- **我的订单**![orderinfo](https://img.qimuu.icu/typory/orderinfo.png)
+#### 我的订单
 
-- **详细订单**![orderDetails](https://img.qimuu.icu/typory/orderDetails.png)
+![image-20240617012410543](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617012410543.png)
+
+#### 详细订单
+
+![image-20240617012437711](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617012437711.png)
+
 ### 主题切换
 
-#### 深色主题![darkTheme](https://img.qimuu.icu/typory/darkTheme.png)
+#### 深色主题
 
-#### 浅色主题![index](https://img.qimuu.icu/typory/index.png)
+![image-20240617012506467](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617012506467.png)
+
+#### 浅色主题
+
+![image-20240617012521623](C:\Users\zwd\AppData\Roaming\Typora\typora-user-images\image-20240617012521623.png)

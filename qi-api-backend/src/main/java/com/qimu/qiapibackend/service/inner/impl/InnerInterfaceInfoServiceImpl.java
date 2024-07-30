@@ -10,10 +10,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import javax.annotation.Resource;
 
 /**
- * @Author: QiMu
- * @Date: 2023年09月15日 22:53
- * @Version: 1.0
- * @Description:
+ * 内部接口调用类impl
  */
 @DubboService
 @Slf4j
@@ -21,6 +18,12 @@ public class InnerInterfaceInfoServiceImpl implements InnerInterfaceInfoService 
     @Resource
     private InterfaceInfoService interfaceInfoService;
 
+    /**
+     * 根据 URL 路径和 HTTP 方法获取接口信息
+     * @param path   路径
+     * @param method 方法
+     * @return InterfaceInfo
+     */
     @Override
     public InterfaceInfo getInterfaceInfo(String path, String method) {
         // 如果带参数，去除第一个？和之后后的参数

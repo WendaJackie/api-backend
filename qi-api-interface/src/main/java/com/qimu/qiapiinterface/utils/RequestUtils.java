@@ -8,10 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.lang.reflect.Field;
 
 /**
- * @Author: QiMu
- * @Date: 2023年09月22日 13:45
- * @Version: 1.0
- * @Description:
+ * 请求工具类
  */
 @Slf4j
 public class RequestUtils {

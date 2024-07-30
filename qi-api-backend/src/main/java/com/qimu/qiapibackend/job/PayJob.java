@@ -15,10 +15,7 @@ import static com.qimu.qiapibackend.model.enums.PayTypeStatusEnum.ALIPAY;
 import static com.qimu.qiapibackend.model.enums.PayTypeStatusEnum.WX;
 
 /**
- * @Author: QiMu
- * @Date: 2023年08月24日 09:24
- * @Version: 1.0
- * @Description:
+ * 定时扫描支付任务
  */
 @Slf4j
 @Component

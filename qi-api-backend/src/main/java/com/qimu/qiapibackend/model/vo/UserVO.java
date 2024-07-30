@@ -6,10 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/10 09:59:28
- * @Version: 1.0
- * @Description: 用户视图
+ *用户视图
  */
 @Data
 public class UserVO implements Serializable {
@@ -54,6 +51,7 @@ public class UserVO implements Serializable {
      * 访问密钥
      */
     private String accessKey;
+
     /**
      * 秘密密钥
      */

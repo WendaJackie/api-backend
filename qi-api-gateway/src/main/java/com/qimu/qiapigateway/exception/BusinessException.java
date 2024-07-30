@@ -3,10 +3,7 @@ package com.qimu.qiapigateway.exception;
 import com.qimu.qiapicommon.common.ErrorCode;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/10 08:54:35
- * @Version: 1.0
- * @Description: 自定义异常类
+ * 自定义异常类
  */
 public class BusinessException extends RuntimeException {
 

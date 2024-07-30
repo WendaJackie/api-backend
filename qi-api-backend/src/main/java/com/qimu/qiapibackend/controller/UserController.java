@@ -40,8 +40,6 @@ import static com.qimu.qiapibackend.utils.EmailUtil.buildEmailContent;
 
 /**
  * 用户接口
- *
- * @author qimu
  */
 @RestController
 @RequestMapping("/user")
@@ -83,7 +81,8 @@ public class UserController {
      * @return {@link BaseResponse}<{@link User}>
      */
     @PostMapping("/login")
-    public BaseResponse<UserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
+    public BaseResponse<UserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest,
+                                          HttpServletRequest request) {
         if (userLoginRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -163,7 +162,7 @@ public class UserController {
     }
 
     /**
-     * 获取验证码
+     * 获取邮箱验证码
      *
      * @param emailAccount 电子邮件帐户
      * @return {@link BaseResponse}<{@link String}>
@@ -241,7 +240,8 @@ public class UserController {
      */
     @PostMapping("/add")
     @AuthCheck(mustRole = ADMIN_ROLE)
-    public BaseResponse<Long> addUser(@RequestBody UserAddRequest userAddRequest, HttpServletRequest request) {
+    public BaseResponse<Long> addUser(@RequestBody UserAddRequest userAddRequest,
+                                      HttpServletRequest request) {
         if (userAddRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -458,7 +458,6 @@ public class UserController {
 
     /**
      * 封号
-     *
      * @param idRequest id请求
      * @param request   请求
      * @return {@link BaseResponse}<{@link Boolean}>
@@ -477,5 +476,14 @@ public class UserController {
         user.setStatus(UserAccountStatusEnum.BAN.getValue());
         return ResultUtils.success(userService.updateById(user));
     }
-    // endregion
+
+    /**
+     * 手机发送验证码
+     * @param mobile
+     * @return
+     */
+    @GetMapping("/captcha")
+    public BaseResponse captcha(@RequestParam String mobile) {
+        return userService.captcha(mobile);
+    }
 }

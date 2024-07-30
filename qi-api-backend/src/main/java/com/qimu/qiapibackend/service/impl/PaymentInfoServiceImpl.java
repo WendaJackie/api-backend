@@ -11,10 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/23 08:16:24
- * @Version: 1.0
- * @Description: 支付信息服务impl
+ * 支付信息服务impl
  */
 @Service
 public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMapper, PaymentInfo> implements PaymentInfoService {

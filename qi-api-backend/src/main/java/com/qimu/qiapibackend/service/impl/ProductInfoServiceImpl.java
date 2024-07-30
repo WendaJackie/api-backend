@@ -12,10 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/25 02:56:44
- * @Version: 1.0
- * @Description: 产品信息服务impl
+ * 产品信息服务impl
  */
 @Service
 public class ProductInfoServiceImpl extends ServiceImpl<ProductInfoMapper, ProductInfo>

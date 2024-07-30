@@ -27,8 +27,6 @@ import java.util.Arrays;
 
 /**
  * 文件接口
- *
- * @author qimu
  */
 @RestController
 @RequestMapping("/file")

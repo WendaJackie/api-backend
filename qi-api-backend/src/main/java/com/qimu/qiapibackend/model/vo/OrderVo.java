@@ -7,10 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023年09月19日 20:41
- * @Version: 1.0
- * @Description:
+ * 订单Vo
  */
 @Data
 public class OrderVo implements Serializable {

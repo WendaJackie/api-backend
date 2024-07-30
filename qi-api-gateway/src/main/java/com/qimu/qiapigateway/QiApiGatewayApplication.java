@@ -9,10 +9,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.stereotype.Service;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/15 08:01:39
- * @Version: 1.0
- * @Description: qi api网关应用程序
+ * Api网关应用程序
  */
 @EnableDubbo
 @Service

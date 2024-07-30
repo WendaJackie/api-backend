@@ -58,10 +58,7 @@ import static com.qimu.qiapibackend.utils.WxPayUtil.getRequestHeader;
 
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/23 03:18:35
- * @Version: 1.0
- * @Description: 接口顺序服务impl
+ * 接口顺序服务impl
  */
 @Slf4j
 @Service

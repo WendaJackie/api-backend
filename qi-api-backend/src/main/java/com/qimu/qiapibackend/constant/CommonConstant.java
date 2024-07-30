@@ -2,8 +2,6 @@ package com.qimu.qiapibackend.constant;
 
 /**
  * 通用常量
- *
- * @author qimu
  */
 public interface CommonConstant {
 

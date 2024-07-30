@@ -31,8 +31,6 @@ import static com.qimu.qiapibackend.constant.UserConstant.ADMIN_ROLE;
 
 /**
  * 帖子接口
- *
- * @author qimu
  */
 @RestController
 @RequestMapping("/productInfo")

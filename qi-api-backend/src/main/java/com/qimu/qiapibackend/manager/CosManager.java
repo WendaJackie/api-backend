@@ -11,8 +11,6 @@ import java.io.File;
 
 /**
  * Cos 对象存储操作
- *
- * @author qimu
  */
 @Component
 public class CosManager {

@@ -38,9 +38,7 @@ import java.util.stream.Collectors;
 import static com.qimu.qiapibackend.constant.UserConstant.ADMIN_ROLE;
 
 /**
- * 帖子接口
- *
- * @author qimu
+ * 接口Controller
  */
 @RestController
 @RequestMapping("/interfaceInfo")
@@ -315,7 +313,8 @@ public class InterfaceInfoController {
      */
     @AuthCheck(mustRole = ADMIN_ROLE)
     @PostMapping("/online")
-    public BaseResponse<Boolean> onlineInterfaceInfo(@RequestBody IdRequest idRequest, HttpServletRequest request) {
+    public BaseResponse<Boolean> onlineInterfaceInfo(@RequestBody IdRequest idRequest,
+                                                     HttpServletRequest request) {
         if (ObjectUtils.anyNull(idRequest, idRequest.getId()) || idRequest.getId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
@@ -399,5 +398,15 @@ public class InterfaceInfoController {
         } catch (Exception e) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, e.getMessage());
         }
+    }
+
+    /**
+     * 获取接口调用次数排名前三的接口
+     *
+     * @return {@link List}<{@link InterfaceInfo}>
+     */
+    @GetMapping("/topThreeInvokedInterfaces")
+    public List<InterfaceInfo> getTopThreeInvokedInterfaces() {
+        return interfaceInfoService.getTopThreeInvokedInterfaces();
     }
 }

@@ -9,10 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/15 09:33:19
- * @Version: 1.0
- * @Description: qi api后端应用程序
+ * Api后端应用程序
  */
 @SpringBootApplication
 @EnableScheduling

@@ -3,12 +3,12 @@ spring:
     active: dev
   application:
     name: qi-api-backend
-  # DataSource Config todo 修改为自己的数据库配置
+  # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/qi_api
     username: root
-    password: 1234
+    password: 123456
   mvc:
     path match:
       matching-strategy: ANT_PATH_MATCHER
@@ -21,17 +21,18 @@ spring:
     port: 6379
     host: localhost
     database: 0
-#  邮箱配置 todo 修改为自己的邮箱发送配置
+#  邮箱配置
   mail:
-    host: smtp.qq.com
-    username: 2483482026@qq.com
-    password: xxxxxxxxxxxxxxxx
-    emailFrom: 2483482026@qq.com
+    host: smtp.163.com
+    username: zwd98430@163.com
+    password: UZOPOWAWQVBGFUVV
+    emailFrom: zwd98430@163.com
     properties:
       mail:
         smtp:
           ssl:
             enable: true
+
 server:
   port: 7529
   address: 0.0.0.0
@@ -55,12 +56,15 @@ mybatis-plus:
 qi:
   api:
     client:
-      access-key: 7052a8xxxxxx267a60
-      secret-key: d8d6df60xxxxx96f1dfe3e1
+#      access-key: 7052a8xxxxxx267a60
+#      secret-key: d8d6df60xxxxx96f1dfe3e1
+      access-key: d727b8105c357c289d9088052a5fcd91
+      secret-key: 72c33a89f6b950f80a143c5b879231ed
       # 本地网关地址，可修改为自己的网关，用于本地测试，线上网关地址等
-    # host: http://localhost:8090/api
+      host: http://localhost:8090/api
+#      host: https://gateway.qimuu.icu/api
 
-# 腾讯云cos配置
+## 腾讯云cos配置
 cos:
   client:
     accessKey: xxxxxxx
@@ -68,7 +72,7 @@ cos:
     region: xxxxxxx
     bucket: xxxxxxx
 
-# 微信支付配置
+## 微信支付配置
 wx:
   pay:
     appId: wxxxxxxxxx67e8dc
@@ -76,18 +80,18 @@ wx:
     apiV3Key: xxxxxbxxx3xxxx3xxx4
     privateKeyPath: classpath:/pem/apiclient_key.pem
     privateCertPath: classpath:/pem/apiclient_cert.pem
-# 本地测试用ngrok内网穿透，这个内网穿透地址，可以修改为自己的。上线修改为后端的接口地址即可
+# 本地测试用ngrok内网穿透，这个内网穿透地址，为自己的。上线修改为后端的接口地址即可
     notifyUrl: https://beloved-massive-sheepdog.ngrok-free.app/api/order/notify/order
 
 # 支付宝支付配置
 alipay:
-  appId: 2xxxxxxxxxxx8
-  sellerId: 2xxxxxxxxxxxxx7
-# 本地测试用ngrok内网穿透，这个内网穿透地址，可以修改为自己的。上线修改为后端的接口地址即可
+  appId: 2021004146681312
+  sellerId: 2088422452323904
+# 本地测试用ngrok内网穿透，这个内网穿透地址，为自己的。上线修改为后端的接口地址即可
   notifyUrl: https://beloved-massive-sheepdog.ngrok-free.app/api/order/notify/order
   returnUrl: http://localhost:8000/account/center
-  private-key: xxxxxxxxxx
-  ali-pay-public-key: xxxxxxxxxxxxxxxx
+  private-key: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCelwg/Ah9KrqMoXsauJYNJpIm0ZlozMN84v7P3OLO65MG/geYjNgUSc0hffwotA+ACrKEgqU44nziobEhXLHnpC2L7EiRTFfiy8MY0EOmRmeczqnI8O6rPHIJiMclguEYhnYzHbkUKylYN2CvnZvOeFZ3n5Ytp1BDxY1QQDYT36Kak3QMIGfQNOj0VBYmenVu/XIUVkHptnPtzrAOK3CuqhnFkcHp2O+8JIINHyM05g5doGkIZthYFizKbdWFFV6gfVXsEVRwI49SO5RsuFJG06naBpuSq9edRUC0SDwS8+mIS00f5J+fNYtOwD7uPXxAZvHVaFIU42oVcui3KuwzpAgMBAAECggEBAIDfySKyzcz5t7rRsfDIqTTKEeFYn4oj9/H8zvliyaNhzBSdMfCBMIP6zOBVs2Y7VOm3cUTCcL9QnFE5lVvJ19PKngfbiUs/epenU9nxuGzKvXhd1XEfJ8Igr8+uF7CSbuNYTZOvB0oqfN3JQnxMTEK13FkbTzyTyaTvi9tzsQ9nZ6ACECJSGbnNmebGsDQIBEOdc0gjXncJj3VA3yrmO2Gxs7jVxt1s4/il9/SypxKb8YiRz19MfPlJD4ks1RuunZF7enXY2GrcnHFBqlONAPZARh6H4mj0dXWHCcUijxvmYBPBXX/PhFmKdRMjllCO0LyJBmFYcWwM5k4kBhcVYBECgYEAzahOiMLazN+kxsXpIgr4i8zbP2NLwUS0lzH8HDqAcOEGKivhNoOqbuJpx7DEcBqXu8CuHBs/b4jt5TJghzcTHqI4DH37AezxI1C+Yt9wDi3a2uQiZm6JTSm+UWrQy/X5dXj9yKRPFJsRZwlz+4tsFg1/t39P+LD4uRCX2X+lme0CgYEAxWk0AbPWYwnhrnOaGYxJyHINVeqwQBKR8TvQ+4SwW7PcMEUzBxO4+35AjrqZdbickpnzsW5zNRHM9WojHz5VQk2c99igAxD/cFEfnNIHCbXdSuAFTaiR7i8HE8DpA4xvK40abUQucvyQS6JhRa38sKZdwDj6iUAINAtJpzsOL20CgYEAllCnHiS1wbrQ+AwdqykzoxLXSUxtSVTLXhtFtug3ismeNOKfmLXBs4w/Xppf6cQ2FR/u4lI0GnSN1NDuZsYlbmWI6/CEr1KcqYBRt3iysVpotUa7sfym1ERne6DD/d/KNkd5ztXxixEQNixdnoS4OqIhMGCYdh/7m2B6bJl0070CgYEAsA0oUjRdhyly2K9DyHDyBA6ikfKgiCOHf8lGkGg/FykJvwqXfUI7gB2R2TfUT8X57EvbpmrH15YuYNbsx5pBUsYArI/F87Ye972BIcu0dxZ3aaTrVdx1eCL8fsNVitKc+gv2e2eIvQc8cBc6BHgrmCZmCV1HIUu3hSJj5v2loukCgYAwgfnlryBIp6Kf64B+2bOHTY9j3nX1DonQmcS4eHaRa9R/7Am/3BH+zZIgZEiX4Q33R3RNMoYK17Tj7KiHnXis+fWGuu4jTBNSrqqv16EcZQV8ILClTK1QL1ZCgg19IC3HOctw6AlpjoSnsGv459wCwOHUPa0nKUTyW1EPmxD1sg==
+  ali-pay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqZQCBBIFP2/LGMoOYsNXc7q1zEk2Xazov5f9YkB72xhyY203pgXq6+I1h/r+jSGoaUUgqHJqI0qvaMUlzmcn/mSDXEiuIkIEwrabRHXwNtRAwA7py4aXzvcyHv3f/81ghy+Nh1dsH2j41vFFpEL8jLU6F9r9LlkOZooiJ6Uu9A6rlMVcllKxr8aQOZvf0Doa94bimGcyDBv+vdq/elq5bWPuEJGnJ1dISL3l6gi1pTysnOI1iRVvHSs6Yi5Fxhm7b4Os6RZABZ7kYhDOn9Jt4UYFRW5TS/r1mbMzO8r+PcH1b4jtIKhc9WL8rU9w4jB6kevudHs928x2NIEv16e7bwIDAQAB
 
 dubbo:
   application:
@@ -98,5 +102,5 @@ dubbo:
     port: -1
   registry:
     id: nacos-registry
-# todo 线上修改为服务器内网地址，参考nacos启动后的链接
+    # 线上修改为服务器内网地址，参考nacos启动后的链接
     address: nacos://localhost:8848

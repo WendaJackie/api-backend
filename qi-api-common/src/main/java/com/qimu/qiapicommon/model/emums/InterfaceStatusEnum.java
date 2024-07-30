@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 /**
  * 接口状态枚举
  *
- * @author yupi
  */
 public enum InterfaceStatusEnum {
 

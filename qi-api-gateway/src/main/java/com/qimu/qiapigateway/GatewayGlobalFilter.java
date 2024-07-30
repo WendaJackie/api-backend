@@ -44,12 +44,8 @@ import static com.qimu.qiapigateway.CacheBodyGatewayFilter.CACHE_REQUEST_BODY_OB
 import static com.qimu.qiapigateway.utils.NetUtils.getIp;
 import static icu.qimuu.qiapisdk.utils.SignUtils.getSign;
 
-
 /**
- * @Author: QiMu
- * @Date: 2023/09/14 10:42:06
- * @Version: 1.0
- * @Description: 网关全局过滤器
+ * 网关全局过滤器
  */
 @Component
 @Slf4j
@@ -114,7 +110,9 @@ public class GatewayGlobalFilter implements GlobalFilter, Ordered {
         if (currentTime - Long.parseLong(timestamp) >= FIVE_MINUTES) {
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR, "会话已过期,请重试！");
         }
+        // todo --- 从这里开始改
         try {
+            // 内部服务方法一
             UserVO user = innerUserService.getInvokeUserByAccessKey(accessKey);
             if (user == null) {
                 throw new BusinessException(ErrorCode.FORBIDDEN_ERROR, "账号不存在");
@@ -139,6 +137,7 @@ public class GatewayGlobalFilter implements GlobalFilter, Ordered {
             if (StringUtils.isAnyBlank(uri, method)) {
                 throw new BusinessException(ErrorCode.PARAMS_ERROR);
             }
+            // 内部服务方法二
             InterfaceInfo interfaceInfo = interfaceInfoService.getInterfaceInfo(uri, method);
 
             if (interfaceInfo == null) {
@@ -230,7 +229,9 @@ public class GatewayGlobalFilter implements GlobalFilter, Ordered {
                         return super.writeWith(
                                 fluxBody.map(dataBuffer -> {
                                     // 扣除积分
+                                    // todo 分布式锁应用
                                     redissonLockUtil.redissonDistributedLocks(("gateway_" + user.getUserAccount()).intern(), () -> {
+                                        // 内部服务方法三
                                         boolean invoke = interfaceInvokeService.invoke(interfaceInfo.getId(), user.getId(), interfaceInfo.getReduceScore());
                                         if (!invoke) {
                                             throw new BusinessException(ErrorCode.OPERATION_ERROR, "接口调用失败");

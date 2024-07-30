@@ -5,10 +5,7 @@ import com.qimu.qiapibackend.model.entity.PaymentInfo;
 import com.qimu.qiapibackend.model.vo.PaymentInfoVo;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/23 08:16:11
- * @Version: 1.0
- * @Description: 支付信息服务
+ *支付信息服务
  */
 public interface PaymentInfoService extends IService<PaymentInfo> {
     /**

@@ -7,10 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/04 11:31:33
- * @Version: 1.0
- * @Description: 接口信息
+ * 接口信息
  */
 @TableName(value = "interface_info")
 @Data

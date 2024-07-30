@@ -6,15 +6,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 全局跨域配置
- *
- * @author qimu
  */
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        // 覆盖所有请求
+        // 覆盖所有接口请求
         registry.addMapping("/**")
                 // 允许发送 Cookie
                 .allowCredentials(true)

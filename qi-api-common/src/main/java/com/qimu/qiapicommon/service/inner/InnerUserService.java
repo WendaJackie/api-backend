@@ -4,10 +4,7 @@ import com.qimu.qiapicommon.model.vo.UserVO;
 
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/21 10:06:40
- * @Version: 1.0
- * @Description: 用户服务
+ * 用户服务
  */
 public interface InnerUserService {
 

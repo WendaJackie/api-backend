@@ -2,6 +2,7 @@ package com.qimu.qiapibackend.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.qimu.qiapibackend.common.BaseResponse;
 import com.qimu.qiapibackend.model.dto.user.*;
 import com.qimu.qiapibackend.model.entity.User;
 import com.qimu.qiapibackend.model.vo.UserVO;
@@ -9,10 +10,7 @@ import com.qimu.qiapibackend.model.vo.UserVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/21 10:06:40
- * @Version: 1.0
- * @Description: 用户服务
+ * 用户服务
  */
 public interface UserService extends IService<User> {
 
@@ -138,4 +136,11 @@ public interface UserService extends IService<User> {
      * @return {@link UserVO}
      */
     UserVO userUnBindEmail(UserUnBindEmailRequest userUnBindEmailRequest, HttpServletRequest request);
+
+    /**
+     * 发送验证码
+     * @param mobile
+     * @return
+     */
+    BaseResponse captcha(String mobile);
 }

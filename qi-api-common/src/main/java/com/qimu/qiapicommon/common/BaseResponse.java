@@ -5,10 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/31 07:45:24
- * @Version: 1.0
- * @Description: 通用返回类
+ * 通用返回类
  */
 @Data
 public class BaseResponse<T> implements Serializable {

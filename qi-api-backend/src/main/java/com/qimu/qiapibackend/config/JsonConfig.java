@@ -8,10 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/25 04:16:03
- * @Version: 1.0
- * @Description: json配置
+ * json配置
  */
 @JsonComponent
 public class JsonConfig {

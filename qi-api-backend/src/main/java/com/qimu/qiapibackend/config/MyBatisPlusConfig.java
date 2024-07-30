@@ -9,8 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * MyBatis Plus 配置
- *
- * @author qimu
  */
 @Configuration
 @MapperScan("com.qimu.qiapibackend.mapper")

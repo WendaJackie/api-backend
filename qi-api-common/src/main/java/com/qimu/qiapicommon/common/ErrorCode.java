@@ -2,8 +2,6 @@ package com.qimu.qiapicommon.common;
 
 /**
  * 错误码
- *
- * @author qimu
  */
 public enum ErrorCode {
     /**

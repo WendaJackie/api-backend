@@ -36,12 +36,8 @@ import java.util.stream.Collectors;
 import static com.qimu.qiapibackend.constant.PayConstant.QUERY_ORDER_STATUS;
 import static com.qimu.qiapibackend.model.enums.PaymentStatusEnum.SUCCESS;
 
-
 /**
- * @Author: QiMu
- * @Date: 2023年08月23日 00:13
- * @Version: 1.0
- * @Description:
+ * 订单接口
  */
 @RestController
 @Slf4j
@@ -59,7 +55,7 @@ public class OrderController {
     // region 增删改查
 
     /**
-     * 取消订单订单
+     * 取消订单
      *
      * @return {@link BaseResponse}<{@link Boolean}>
      */
@@ -78,6 +74,12 @@ public class OrderController {
         return ResultUtils.success(closedResult);
     }
 
+    /**
+     * 删除订单
+     * @param id
+     * @param request
+     * @return
+     */
     @PostMapping("/delete")
     public BaseResponse<Boolean> deleteProductOrder(String id, HttpServletRequest request) {
         if (StringUtils.isBlank(id)) {
@@ -231,6 +233,11 @@ public class OrderController {
         return orderService.doOrderNotify(notifyData, request);
     }
 
+    /**
+     * 转Vo
+     * @param productOrder
+     * @return
+     */
     private ProductOrderVo formatProductOrderVo(ProductOrder productOrder) {
         ProductOrderVo productOrderVo = new ProductOrderVo();
         BeanUtils.copyProperties(productOrder, productOrderVo);

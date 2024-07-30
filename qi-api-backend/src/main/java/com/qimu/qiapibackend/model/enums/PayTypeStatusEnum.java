@@ -5,10 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @Author: QiMu
- * @Date: 2023/08/23 04:19:02
- * @Version: 1.0
- * @Description: 支付类型枚举类型
+ * 支付类型枚举类型
  */
 public enum PayTypeStatusEnum {
 
@@ -16,6 +13,7 @@ public enum PayTypeStatusEnum {
      * 微信支付
      */
     WX("微信支付", "WX"),
+
     /**
      * 支付宝支付
      */

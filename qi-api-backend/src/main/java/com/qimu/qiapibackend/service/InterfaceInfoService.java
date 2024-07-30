@@ -3,12 +3,11 @@ package com.qimu.qiapibackend.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.qimu.qiapicommon.model.entity.InterfaceInfo;
 
+import java.util.List;
+
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/15 09:32:11
- * @Version: 1.0
- * @Description: 接口信息服务
+ * 接口信息服务
  */
 public interface InterfaceInfoService extends IService<InterfaceInfo> {
 
@@ -27,4 +26,11 @@ public interface InterfaceInfoService extends IService<InterfaceInfo> {
      * @return boolean
      */
     boolean updateTotalInvokes(long interfaceId);
+
+    /**
+     * 获取前三个常被调用的接口
+     *
+     * @return List<InterfaceInfo>
+     */
+    List<InterfaceInfo> getTopThreeInvokedInterfaces();
 }

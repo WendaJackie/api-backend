@@ -6,10 +6,7 @@ import com.qimu.qiapibackend.model.entity.RechargeActivity;
 import java.util.List;
 
 /**
- * @Author: QiMu
- * @Date: 2023/09/11 11:26:42
- * @Version: 1.0
- * @Description: 充值活动服务
+ * 充值活动服务
  */
 public interface RechargeActivityService extends IService<RechargeActivity> {
     /**

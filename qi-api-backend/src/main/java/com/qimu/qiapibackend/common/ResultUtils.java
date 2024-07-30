@@ -2,8 +2,6 @@ package com.qimu.qiapibackend.common;
 
 /**
  * 返回工具类
- *
- * @author qimu
  */
 public class ResultUtils {
 
