@@ -25,9 +25,9 @@ public class ResponseUtils {
         try {
             response = get(baseUrl, params);
             Map<String, Object> fromResponse = responseToMap(response);
-            boolean success = (boolean) fromResponse.get("success");
+            Boolean success = (Boolean) fromResponse.get("success");
             ResultResponse baseResponse = new ResultResponse();
-            if (!success) {
+            if (success == null || !success) {
                 baseResponse.setData(fromResponse);
                 return baseResponse;
             }

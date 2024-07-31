@@ -57,8 +57,8 @@ public class ServiceController {
     public ResultResponse getHoroscope(HoroscopeParams horoscopeParams) throws ApiException {
         String response = get("https://api.vvhan.com/api/horoscope", horoscopeParams);
         Map<String, Object> fromResponse = responseToMap(response);
-        boolean success = (boolean) fromResponse.get("success");
-        if (!success) {
+        Boolean success = (Boolean) fromResponse.get("success");
+        if (success == null || !success) {
             ResultResponse baseResponse = new ResultResponse();
             baseResponse.setData(fromResponse);
             return baseResponse;
